@@ -1,0 +1,7 @@
+{
+  "productos": [
+    { "id": 1, "codigo": "001", "nombre": "Gaseosa", "categoria": "Bebidas", "precio": 3.5 },
+    { "id": 2, "codigo": "002", "nombre": "Galleta", "categoria": "Snacks", "precio": 1.5 },
+    { "id": 3, "codigo": "003", "nombre": "Chocolate", "categoria": "Snacks", "precio": 4.5 }
+  ]
+}
