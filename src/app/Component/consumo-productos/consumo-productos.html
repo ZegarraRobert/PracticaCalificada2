@@ -1,0 +1,62 @@
+<div class="container mt-4">
+  <h2>Consumo de Productos Json</h2>
+
+  <h4>Consultar por ID</h4>
+  <form [formGroup]="formBuscar()" (ngSubmit)="buscar()">
+    <label>ID
+      <input type="number" formControlName="id">
+    </label>
+    <button type="submit">Buscar</button>
+  </form>
+  <p>{{ encontrado() | json }}</p>
+
+  <h4>Registrar producto</h4>
+  <form [formGroup]="form()" (ngSubmit)="registrar()">
+    <label>Código
+      <input type="text" formControlName="codigo">
+    </label>
+    <label>Nombre
+      <input type="text" formControlName="nombre">
+    </label>
+    <label>Categoría
+      <input type="text" formControlName="categoria">
+    </label>
+    <label>Precio
+      <input type="number" formControlName="precio">
+    </label>
+    <button type="submit">Registrar</button>
+  </form>
+
+  <h4>Modificar precio</h4>
+  <form [formGroup]="formPrecio()" (ngSubmit)="modificarPrecio()">
+    <label>ID
+      <input type="number" formControlName="id">
+    </label>
+    <label>Nuevo precio
+      <input type="number" formControlName="precio">
+    </label>
+    <button type="submit">Modificar</button>
+  </form>
+
+  <h4>Listado</h4>
+  <table class="table table-striped">
+    <tr>
+      <td>Id</td>
+      <td>Código</td>
+      <td>Nombre</td>
+      <td>Categoría</td>
+      <td>Precio</td>
+      <td>Acción</td>
+    </tr>
+    @for (p of productos(); track p.id) {
+      <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.codigo }}</td>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.categoria }}</td>
+        <td>{{ p.precio }}</td>
+        <td><button (click)="eliminar(p.id!)">Eliminar</button></td>
+      </tr>
+    }
+  </table>
+</div>
