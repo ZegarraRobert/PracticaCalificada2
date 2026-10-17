@@ -3,17 +3,17 @@
 
   <form [formGroup]="form()" class="row g-3 mb-4">
     <div class="col-md-4">
-      <label class="form-label">Buscar en</label>
+      <label class="form-label">Filtro</label>
       <select class="form-select" formControlName="campo">
-        <option value="codigo">Código</option>
+        <option value="codigo">Codigo</option>
         <option value="nombre">Nombre</option>
-        <option value="categoria">Categoría</option>
+        <option value="categoria">Categoria</option>
         <option value="precio">Precio</option>
       </select>
     </div>
     <div class="col-md-8">
-      <label class="form-label">Término de búsqueda</label>
-      <input type="text" class="form-control" placeholder="Escribe para filtrar..."
+      <label class="form-label">Busqueda</label>
+      <input type="text" class="form-control" placeholder="Escribe para filtrar"
              formControlName="termino">
     </div>
   </form>
